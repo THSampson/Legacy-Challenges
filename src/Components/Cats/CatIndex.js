@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CatList from './CatList';
  
-class CatIndex {
- constructor(){
+class CatIndex extends React.Component {
+ constructor(props){
    super(props)
-   state : {
-     breeds: ['persian', 'siamese', 'maine coon', 'ragdoll', 'scottish fold', 'sphynx', 'british shorthair', 'bengal', 'american shorthair']
-   }
+   this.state = {
+    breeds: ['persian', 'siamese', 'maine coon', 'ragdoll', 'scottish fold', 'sphynx', 'british shorthair', 'bengal', 'american shorthair']
+   };
  }
-
-   return (
+ render() {   
+ return (
      <div>
-      <CatList cats={breeds} />
+      <CatList breeds={this.state.breeds} />
      </div>
-   );
-
+   )
+ }
 }
 
+export default CatIndex;
